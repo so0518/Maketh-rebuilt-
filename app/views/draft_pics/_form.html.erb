@@ -1,0 +1,22 @@
+<%= form_with(model: draft_pic, local: true) do |form| %>
+  <% if draft_pic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(draft_pic.errors.count, "error") %> prohibited this draft_pic from being saved:</h2>
+
+      <ul>
+      <% draft_pic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pic_file %>
+    <%= form.text_field :pic_file, id: :draft_pic_pic_file %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @draft.name %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @draft.gender %>
+</p>
+
+<p>
+  <strong>Expected price:</strong>
+  <%= @draft.expected_price %>
+</p>
+
+<p>
+  <strong>Explanation:</strong>
+  <%= @draft.explanation %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @draft.category %>
+</p>
+
+<p>
+  <strong>Bookmark:</strong>
+  <%= @draft.bookmark %>
+</p>
+
+<%= link_to 'Edit', edit_draft_path(@draft) %> |
+<%= link_to 'Back', drafts_path %>

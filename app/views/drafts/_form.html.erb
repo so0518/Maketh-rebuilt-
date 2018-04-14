@@ -1,0 +1,47 @@
+<%= form_with(model: draft, local: true) do |form| %>
+  <% if draft.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(draft.errors.count, "error") %> prohibited this draft from being saved:</h2>
+
+      <ul>
+      <% draft.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :draft_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.number_field :gender, id: :draft_gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expected_price %>
+    <%= form.number_field :expected_price, id: :draft_expected_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :explanation %>
+    <%= form.text_field :explanation, id: :draft_explanation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.number_field :category, id: :draft_category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bookmark %>
+    <%= form.number_field :bookmark, id: :draft_bookmark %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

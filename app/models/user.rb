@@ -18,6 +18,14 @@ class User < ApplicationRecord
   #バリデーション  
   validates :username,
   uniqueness: { case_sensitive: :false },
-  length: { minimum: 4, maximum: 20 }
+  length: { minimum: 1, maximum: 20 }
   
+  #draftとの関係
+  has_many :drafts
+  accepts_nested_attributes_for :drafts
+  
+  #フォロー機能
+  acts_as_followable # フォロワー機能
+  acts_as_follower   # フォロー機能
+
 end

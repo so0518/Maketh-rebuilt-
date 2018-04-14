@@ -54,5 +54,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #devise
-
 gem 'devise'
+
+#フォロー機能の実装
+gem "acts_as_follower", github: "tcocca/acts_as_follower"

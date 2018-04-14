@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sample Pics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pic file</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sample_pics.each do |sample_pic| %>
+      <tr>
+        <td><%= sample_pic.pic_file %></td>
+        <td><%= link_to 'Show', sample_pic %></td>
+        <td><%= link_to 'Edit', edit_sample_pic_path(sample_pic) %></td>
+        <td><%= link_to 'Destroy', sample_pic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sample Pic', new_sample_pic_path %>
