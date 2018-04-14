@@ -22,7 +22,7 @@ class User < ApplicationRecord
   
   #draftとの関係
   has_many :drafts
-  accepts_nested_attributes_for :drafts
+  accepts_nested_attributes_for :drafts, dependent: :destroy
   
   #フォロー機能
   acts_as_followable # フォロワー機能

@@ -58,3 +58,7 @@ gem 'devise'
 
 #フォロー機能の実装
 gem "acts_as_follower", github: "tcocca/acts_as_follower"
+
+#boostrap4
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+gem 'jquery-rails'
