@@ -8,7 +8,7 @@ class User < ApplicationRecord
   
   #ログイン認証の条件をオーバーライド
     def self.find_first_by_auth_conditions(warden_conditions)
-    conditions = warden_conditions.dup
+     conditions = warden_conditions.dup
       if login = conditions.delete(:login)
       where(conditions).where(["username = :value OR lower(email) = lower(:value)", { :value => login }]).first
       else
@@ -18,11 +18,11 @@ class User < ApplicationRecord
   #バリデーション  
   validates :username,
   uniqueness: { case_sensitive: :false },
-  length: { minimum: 1, maximum: 20 }
+  length: { minimum: 1, maximum: 50 }
   
   #draftとの関係
   has_many :drafts
-  accepts_nested_attributes_for :drafts, dependent: :destroy
+  accepts_nested_attributes_for :drafts
   
   #フォロー機能
   acts_as_followable # フォロワー機能

@@ -5,5 +5,5 @@ class Draft < ApplicationRecord
       default_scope -> { order('created_at DESC') }
       
       has_many :draft_pics
-      accepts_nested_attributes_for :draft_pics ,dependent:draft_pics
+      accepts_nested_attributes_for :draft_pics
 end
