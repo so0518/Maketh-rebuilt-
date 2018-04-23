@@ -1,4 +1,5 @@
-class ChangeNameOptionsToUsers < ActiveRecord::Migration
+class ChangeNameOptionsToUsers < ActiveRecord::Migration[4.2]
+
   def up
     change_column :users, :username, :string, null: false, default: ""
   end
@@ -7,6 +8,5 @@ class ChangeNameOptionsToUsers < ActiveRecord::Migration
     change_column :users, :username, :string, null: true, default: nil
   end
   
-  add_index :users, :username, unique: true
   
 end
